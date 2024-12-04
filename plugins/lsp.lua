@@ -29,7 +29,8 @@ return {
                 "lua_ls",
                 "cssls",
                 "ts_ls",
-                "html"
+                "html",
+                "rust_analyzer",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
