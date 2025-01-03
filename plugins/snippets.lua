@@ -8,24 +8,24 @@ return {
 
         dependencies = {
             "rafamadriz/friendly-snippets",
-            config = function ()
-                require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript","html" } })
-        end
+            config = function()
+                require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "html", "javascriptreact" } })
+            end
         },
 
         config = function()
-       local ls = require("luasnip")
+            local ls = require("luasnip")
             --- TODO: What is expand?
-            vim.keymap.set({"i"}, "<C-s>e", function() ls.expand() end, {silent = true})
+            vim.keymap.set({ "i" }, "<C-s>e", function() ls.expand() end, { silent = true })
 
-            vim.keymap.set({"i", "s"}, "<C-s>;", function() ls.jump(1) end, {silent = true})
-            vim.keymap.set({"i", "s"}, "<C-s>,", function() ls.jump(-1) end, {silent = true})
+            vim.keymap.set({ "i", "s" }, "<C-s>;", function() ls.jump(1) end, { silent = true })
+            vim.keymap.set({ "i", "s" }, "<C-s>,", function() ls.jump(-1) end, { silent = true })
 
-            vim.keymap.set({"i", "s"}, "<C-E>", function()
+            vim.keymap.set({ "i", "s" }, "<C-E>", function()
                 if ls.choice_active() then
                     ls.change_choice(1)
                 end
-            end, {silent = true})
+            end, { silent = true })
         end,
     }
 }
