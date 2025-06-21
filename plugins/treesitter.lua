@@ -1,11 +1,11 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	 config = function()
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
         require("nvim-treesitter.configs").setup({
             -- A list of parser names, or "all"
             ensure_installed = {
-		    "javascript", "lua", "bash","html","css",
+                "javascript", "lua", "bash", "html", "css", "rust",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -13,7 +13,7 @@ return {
 
             -- Automatically install missing parsers when entering buffer
             -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
-            auto_install = true,
+            auto_install = false,
 
             indent = {
                 enable = true
@@ -30,7 +30,7 @@ return {
                         vim.notify(
                             "File larger than 100KB treesitter disabled for performance",
                             vim.log.levels.WARN,
-                            {title = "Treesitter"}
+                            { title = "Treesitter" }
                         )
                         return true
                     end

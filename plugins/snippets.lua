@@ -9,13 +9,14 @@ return {
         dependencies = {
             "rafamadriz/friendly-snippets",
             config = function()
-                require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "html", "javascriptreact" } })
+                require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "html", "javascriptreact", "typescriptreact"} })
             end
         },
 
         config = function()
             local ls = require("luasnip")
             ls.filetype_extend("javascriptreact", { "html" })
+            ls.filetype_extend("typescriptreact", { "html" })
             --- TODO: What is expand?
             vim.keymap.set({ "i" }, "<C-s>e", function() ls.expand() end, { silent = true })
 
