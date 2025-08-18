@@ -1,25 +1,42 @@
 function ColorMyPencil(color)
-    color = color or "rose-pine"
+    color = color or "gruvbox"
     vim.cmd.colorscheme(color)
-    local groups = {
-        'Normal', 'NormalNC', 'NormalFloat', 'FloatBorder', 'FloatTitle', 'TelescopeBorder',
-    }
+    local groups = { 'NormalFloat', }
     for _, item in ipairs(groups) do
-        --vim.cmd("hi " .. item .. " ctermbg=none guibg=none")--
         vim.api.nvim_set_hl(0, item, { bg = "none" })
     end
 end
 
 return {
     {
-        "rose-pine/neovim",
-        name = "rose-pine",
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
         config = function()
-            require("rose-pine").setup({
-                disable_background = true,
-                styles = { italic = false, }
+            require("gruvbox").setup({
+                terminal_colors = true, -- add neovim terminal colors
+                undercurl = true,
+                underline = false,
+                bold = true,
+                italic = {
+                    strings = false,
+                    emphasis = false,
+                    comments = false,
+                    operators = false,
+                    folds = false,
+                },
+                strikethrough = true,
+                invert_selection = false,
+                invert_signs = false,
+                invert_tabline = false,
+                invert_intend_guides = false,
+                inverse = true, -- invert background for search, diffs, statuslines and errors
+                contrast = "",  -- can be "hard", "soft" or empty string
+                palette_overrides = {},
+                overrides = {},
+                dim_inactive = false,
+                transparent_mode = true,
             })
             ColorMyPencil()
-        end
-    }
+        end,
+    },
 }

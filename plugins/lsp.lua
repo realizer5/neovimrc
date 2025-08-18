@@ -22,7 +22,15 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        require("fidget").setup({})
+        require("fidget").setup({
+            notification = {
+                window = {
+                    normal_hl = "Comment",
+                    winblend = 0,
+                    border = "rounded",
+                }
+            }
+        })
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -31,7 +39,6 @@ return {
                 "tailwindcss",
                 "ts_ls",
                 "html",
-                "rust_analyzer",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -46,10 +53,13 @@ return {
                         capabilities = capabilities,
                         settings = {
                             Lua = {
-                                runtime = { version = "Lua 5.1" },
-                                diagnostics = {
-                                    globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                                },
+                                format = {
+                                    enable = true,
+                                    defaultConfig = {
+                                        indent_style = "space",
+                                        indent_size = "2",
+                                    }
+                                }
                             }
                         }
                     }
