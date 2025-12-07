@@ -12,6 +12,11 @@ return {
                 go = { "gofmt" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
+                typescriptreact = { "prettier" },
+                javascriptreact = { "prettier" },
+                css = { "prettier" },
+                html = { "prettier" },
+                json = { "prettier" },
             },
         })
 
