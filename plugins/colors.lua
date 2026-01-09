@@ -1,10 +1,6 @@
 function ColorMyPencil(color)
     color = color or "gruvbox"
     vim.cmd.colorscheme(color)
-    local groups = { 'NormalFloat', }
-    for _, item in ipairs(groups) do
-        vim.api.nvim_set_hl(0, item, { bg = "none" })
-    end
 end
 
 return {
