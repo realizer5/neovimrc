@@ -9,7 +9,7 @@ return {
         dependencies = {
             "rafamadriz/friendly-snippets",
             config = function()
-                require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "html", "javascriptreact", "typescriptreact"} })
+                require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "html", "css", "javascriptreact", "typescriptreact" } })
             end
         },
 
