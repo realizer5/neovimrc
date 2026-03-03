@@ -29,7 +29,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set({"n","i"}, "<C-x>", "<ESc>:w<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
