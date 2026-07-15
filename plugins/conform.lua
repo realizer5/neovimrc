@@ -17,6 +17,7 @@ return {
                 css = { "prettier" },
                 html = { "prettier" },
                 json = { "prettier" },
+                markdown = { "prettier" },
             },
         })
 
